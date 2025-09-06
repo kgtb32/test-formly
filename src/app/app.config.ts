@@ -8,8 +8,9 @@ const config: ConfigOption[] = [
   ...withFormlyBootstrap(),
   {
     validationMessages: [
-      { name: 'required', message: 'Ce champ est requis' },
-    ]
+      { name: 'required', message: 'Ce champ est requis.' },
+      { name: 'pattern', message: 'Ce champ est invalide.' }
+    ],
   }
 ]
 

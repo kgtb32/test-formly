@@ -4,7 +4,8 @@ import { FieldListChoice } from "../models/field-list-choices";
 export interface AddressFieldConfig {
     adressesTypes: FieldListChoice[]
     postalCodes: FieldListChoice[],
-    key: string
+    key: string,
+    label?: string
 }
 
 export function adresseField(config: AddressFieldConfig): FormlyFieldConfig {
@@ -16,7 +17,7 @@ export function adresseField(config: AddressFieldConfig): FormlyFieldConfig {
                 type: 'select',
                 defaultValue: config.adressesTypes[0].value,
                 props: {
-                    label: "Type d'adresse",
+                    label: config.label ?? "Type d'adresse",
                     required: true,
                     options: config.adressesTypes
                 },
